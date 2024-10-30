@@ -36,6 +36,6 @@ class RateLimitingHandler(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(b"Hello! You are within the rate limit.")
 
 
-with socketserver.TCPServer(("10.62.146.179", PORT), RateLimitingHandler) as httpd:
+with socketserver.TCPServer(("", PORT), RateLimitingHandler) as httpd:
     print(f"Rate-limited server serving on port {PORT}")
     httpd.serve_forever()
